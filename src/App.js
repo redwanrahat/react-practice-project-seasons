@@ -23,6 +23,7 @@ class App extends Component {
       )
     }
     if(!this.state.errorMessage && this.state.lat){
+      console.log(this.state.lat)
       return(
         <div>
           <SeasonDisplay lat={this.state.lat}/>
