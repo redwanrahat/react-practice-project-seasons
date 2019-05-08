@@ -12,11 +12,11 @@ const seasonConfig = {
 }
 
 const getSeason = (lat, month) => {
+    const decision = lat > 0 ? 'summer' : 'winter';
     if(month > 2 && month < 9){
-        return lat > 0 ? 'summer' : 'winter';
-    } else{
-        return lat > 0 ? 'winter' : 'summer'
-    }
+        return decision
+    } 
+    return decision
 }
 
 const SeasonDisplay = props => {
