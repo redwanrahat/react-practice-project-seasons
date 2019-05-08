@@ -1,13 +1,17 @@
 import React from "react"
 
-const Spinner = () =>{
+const Spinner = props =>{
     return(
         <div className="ui segment" style={{height: "100vh"}}>
-            <div className="ui active inverted dimmer">
-                <div className="ui text loader">Loading</div>
+            <div className="ui active dimmer">
+                <div className="ui text loader">{props.message}</div>
             </div>
         </div>
     )
+}
+
+Spinner.defaultProps = {
+    message: "Loading"
 }
 
 export default Spinner

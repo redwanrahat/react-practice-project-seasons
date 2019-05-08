@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import './App.css';
 import SeasonDisplay from './SeasonDisplay';
 import Spinner from "./Spinner";
@@ -14,7 +15,7 @@ class App extends Component {
       err => this.setState({errorMessage: err.message})
     )
   }
-  render(){
+  renderContent(){
     if(this.state.errorMessage && !this.state.lat){
       return(
         <div>
@@ -31,7 +32,16 @@ class App extends Component {
       )
     }
     return(
-      <Spinner />
+      <Spinner 
+        message="Please Accept Location Request"
+      />
+    )
+  }
+  render(){
+    return(
+      <div>
+        {this.renderContent()}
+      </div>
     )
   }
 }
